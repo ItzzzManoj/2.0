@@ -13,14 +13,17 @@
     </div>
 */
 
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 const htmlEle = React.createElement("div", {}, [
     React.createElement("div", { id: "new-div" }, 
     React.createElement("h1", {}, "I am heading 1")
    ),
     React.createElement("div", { id: "new-div" }, 
-    React.createElement("h2", {}, "I am heading 2"))
+    React.createElement("h2", {}, "I am heading 41"))
 ]);
 
-rootEle = ReactDOM.createRoot(document.getElementById("root"));
+const rootEle = ReactDOM.createRoot(document.getElementById("root"));
 
 rootEle.render(htmlEle);
