@@ -1,29 +1,38 @@
-/*
-    <div>
-      <div id="new-div">
-        <h1>
-          I am heading 1
-        </h1>
-      </div>
-      <div id="new-div1">
-        <h2>
-          I am heading 2
-        </h2>
-      </div>
-    </div>
-*/
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const htmlEle = React.createElement("div", {}, [
-    React.createElement("div", { id: "new-div" }, 
-    React.createElement("h1", {}, "I am heading 1")
-   ),
-    React.createElement("div", { id: "new-div" }, 
-    React.createElement("h2", {}, "I am heading 41"))
-]);
+const TitleComponent = function () {
+  return (
+    <h1 id="color-red">
+        I am a title component of normal function!
+    </h1>
+  );
+}
 
-const rootEle = ReactDOM.createRoot(document.getElementById("root"));
+const hundred = 100;
 
-rootEle.render(htmlEle);
+const titleElement = (
+  <div>
+    { hundred }
+    { TitleComponent() }
+    <h2>
+      I am heading 2!
+    </h2>
+  </div>
+);
+
+const HeadingComponent = () => (
+  <div>
+    <TitleComponent />
+    {
+      titleElement
+    }
+    <h1 id="color-red">
+      I am a Heading Component
+    </h1>
+  </div>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<HeadingComponent />);
